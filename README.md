@@ -1,4 +1,4 @@
-# turism4futurism
+# RentMyHome
 This is out project.
 
-JIRA: https://turismforfuturism.atlassian.net/jira/software/projects/TUR/boards/1/backlog
+JIRA: https://rent-my-home.atlassian.net/jira/software/c/projects/RMH/issues
