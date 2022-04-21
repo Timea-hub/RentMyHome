@@ -8,6 +8,8 @@ import javafx.scene.text.Text;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.services.UserService;
 
+//Test GIT
+
 public class RegistrationController {
 
     @FXML
