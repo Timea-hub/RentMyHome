@@ -9,6 +9,7 @@ import javafx.scene.text.Text;
 import javafx.scene.Scene;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
+import org.loose.fis.sre.exceptions.UsernameDoesNotExistsException;
 import org.loose.fis.sre.model.User;
 
 import java.io.IOException;
@@ -46,7 +47,7 @@ public class LoginController {
                 primary.setScene(nextScene);
                 primary.show();
             }
-        //} catch (UsernameDoesNotExistsException ex) {
+        } catch (UsernameDoesNotExistsException ex) {
             warningText.setText("The account does not exist");
         //} catch (IncorrectPasswordException e) {
             warningText.setText("The password is wrong");
