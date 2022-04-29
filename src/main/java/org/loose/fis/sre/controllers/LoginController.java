@@ -33,15 +33,15 @@ public class LoginController {
 
         Stage primary = (Stage) warningText.getScene().getWindow();
         try {
-            //String role = getRole(usernameField.getText(), passwordField.getText());
-            //User.setUser(usernameField.getText());
+            String role = getRole(usernameField.getText(), passwordField.getText());
+            User.setUser(usernameField.getText());
 
-            //if(role.equals("Admin")) {
+            if(role.equals("Admin")) {
                 Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("admin.fxml"));
                 Scene nextScene = new Scene(root, 600, 400);
                 primary.setScene(nextScene);
                 primary.show();
-            //} else if (role.equals("Client")){
+            } else if (role.equals("Client")){
                 Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("client.fxml"));
                 Scene nextScene = new Scene(root, 600, 400);
                 primary.setScene(nextScene);
@@ -49,7 +49,7 @@ public class LoginController {
             }
         } catch (UsernameDoesNotExistsException ex) {
             warningText.setText("The account does not exist");
-        //} catch (IncorrectPasswordException e) {
+        } catch (IncorrectPasswordException e) {
             warningText.setText("The password is wrong");
         }
     }
