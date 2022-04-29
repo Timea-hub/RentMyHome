@@ -7,6 +7,7 @@ public class User {
     private String username;
     private String password;
     private String role;
+    private static String user;
 
     public User(String username, String password, String role) {
         this.username = username;
@@ -15,6 +16,14 @@ public class User {
     }
 
     public User() {
+    }
+
+    public static void setUser(String user1) {
+        user = user1;
+    }
+
+    public String getUser() {
+        return user;
     }
 
     public String getUsername() {

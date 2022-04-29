@@ -2,22 +2,27 @@ package org.loose.fis.sre.services;
 
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.loose.fis.sre.exceptions.IncorrectPasswordException;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
+import org.loose.fis.sre.exceptions.UsernameDoesNotExistsException;
 import org.loose.fis.sre.model.User;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
+import java.util.List;
 
 import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 
 public class UserService {
 
     private static ObjectRepository<User> userRepository;
+    private static Nitrite database;
 
     public static void initDatabase() {
-        Nitrite database = Nitrite.builder()
+        FileSystemService.initDirectory();
+        database = Nitrite.builder()g
                 .filePath(getPathToFile("registration-example.db").toFile())
                 .openOrCreate("test", "test");
 
@@ -57,5 +62,22 @@ public class UserService {
         return md;
     }
 
+    public static String getRole(String username, String password) throws IncorrectPasswordException, UsernameDoesNotExistsException {
+        for (User user : userRepository.find()) {
+            if (Objects.equals(username, user.getUsername())) {
+                if (Objects.equals(encodePassword(username, password), user.getPassword())) {
+                    return user.getRole();
+                } else {
+                    throw new IncorrectPasswordException(password);
+                }
+            }
+        }
+        throw new UsernameDoesNotExistsException(username);
+    }
+
+    public static void close() {
+        userRepository.close();
+        database.close();
+    }
 
 }
