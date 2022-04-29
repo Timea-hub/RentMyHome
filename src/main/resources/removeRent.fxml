@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane id="removeRentWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.RemoveRentController">
+    <children>
+        <Label layoutX="236.0" layoutY="37.0" prefHeight="30.0" prefWidth="118.0" text="Remove Rent">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Button id="backButton" fx:id="backButton" layoutX="14.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="43.0" prefWidth="89.0" text="Back">
+            <font>
+                <Font size="17.0" />
+            </font></Button>
+        <TableView id="tableView" fx:id="table" layoutX="41.0" layoutY="79.0" prefHeight="195.0" prefWidth="522.0" />
+        <Button id="removeSelectedButton" layoutX="241.0" layoutY="283.0" mnemonicParsing="false" onAction="#handleRemoveSelectedButton" prefHeight="43.0" prefWidth="118.0" text="Remove Selected" />
+        <Button id="refreshTableButton" layoutX="464.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleRefresh" prefHeight="43.0" prefWidth="99.0" text="Refresh Table" />
+    </children>
+</Pane>
