@@ -9,6 +9,7 @@ import javafx.scene.text.Text;
 import javafx.scene.Scene;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
+import org.loose.fis.sre.exceptions.IncorrectPasswordException;
 import org.loose.fis.sre.exceptions.UsernameDoesNotExistsException;
 import org.loose.fis.sre.model.User;
 
