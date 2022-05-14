@@ -15,7 +15,7 @@ import org.loose.fis.sre.services.RentingService;
 import java.io.IOException;
 import java.util.List;
 
-public class ChooseRentingController {
+public class ChooseDestinationController {
 
     public TextField noOfNights;
     public TextField searchByCity;
