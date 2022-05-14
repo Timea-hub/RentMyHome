@@ -1,4 +1,4 @@
 package org.loose.fis.sre.exceptions;
 
-public class DestinationIncompleteException {
+public class DestinationIncompleteException extends Throwable {
 }
