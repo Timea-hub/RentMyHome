@@ -3,16 +3,12 @@ package org.loose.fis.sre.services;
 
         import org.dizitart.no2.Nitrite;
         import org.dizitart.no2.objects.ObjectRepository;
-        import org.loose.fis.sre.exceptions.DestinationIncompleteException;
-        import org.loose.fis.sre.exceptions.IncorrectPasswordException;
-        import org.loose.fis.sre.exceptions.UsernameDoesNotExistsException;
+        import org.loose.fis.sre.exceptions.RentIncompleteException;
         import org.loose.fis.sre.model.Renting;
-        import org.loose.fis.sre.model.User;
 
 
         import java.util.ArrayList;
         import java.util.List;
-        import java.util.Objects;
 
         import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
         import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
@@ -31,9 +27,9 @@ public class RentingService {
         rentingRepository = database.getRepository(Renting.class);
     }
 
-    public static void addDestination(String city, String hotel, String typeOfTransport, double price) throws DestinationIncompleteException {
-        if ((city.equals("")) || (hotel.equals("")) || (typeOfTransport.equals(""))) throw new DestinationIncompleteException();
-        rentingRepository.insert(new Renting(city, hotel, typeOfTransport, price));
+    public static void addDestination(String city, String apartament, String cleaningService, double price) throws RentIncompleteException {
+        if ((city.equals("")) || (apartament.equals("")) || (cleaningService.equals(""))) throw new RentIncompleteException();
+        rentingRepository.insert(new Renting(city, apartament, cleaningService, price));
     }
 
     public static List<Renting> getAllUsers() {

@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" id="addRentWindow" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.AddDestinationController">
+<Pane maxHeight="-Infinity" id="addRentWindow" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.AddRentController">
     <children>
         <Button fx:id="saveButton" id="saveButton" layoutX="269.0" layoutY="266.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="35.0" prefWidth="85.0" text="Save" textAlignment="CENTER">
             <font>

@@ -10,7 +10,7 @@
     <padding>
         <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
     </padding>
-    <Text id="title-text" text="FIS - Student Manager" GridPane.columnIndex="0" GridPane.columnSpan="2"
+    <Text id="title-text" text="Rent my home - create your account!" GridPane.columnIndex="0" GridPane.columnSpan="2"
           GridPane.rowIndex="0"/>
 
     <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
@@ -30,4 +30,12 @@
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="5">
         <Button onAction="#handleRegisterAction" text="Register"/>
     </HBox>
+
+    <Label text="Already have an account?" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+
+    <Text fx:id="loginMessage" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+    <HBox alignment="bottom_right" spacing="15" GridPane.columnIndex="1" GridPane.rowIndex="7">
+        <Button onAction="#handleRegisterAction" text="Log in"/>
+    </HBox>
+
 </GridPane>
