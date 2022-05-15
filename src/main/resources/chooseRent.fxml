@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane id="chooseRentWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ChooseRentController">
+    <children>
+        <Label alignment="CENTER" layoutX="208.0" layoutY="25.0" prefHeight="43.0" prefWidth="184.0" text="Choose Renting Place">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label contentDisplay="CENTER" layoutX="36.0" layoutY="263.0" prefHeight="26.0" prefWidth="152.0" text="Number of nights">
+            <font>
+                <Font size="17.0" />
+            </font></Label>
+        <TextField id="noOfNightsTextField" fx:id="noOfNights" layoutX="196.0" layoutY="263.0" onInputMethodTextChanged="#handleCalculate" onKeyPressed="#handleCalculate" onKeyReleased="#handleCalculate" onKeyTyped="#handleCalculate" prefHeight="9.0" prefWidth="60.0" />
+        <Text id="totalPriceText" fx:id="totalPriceText" layoutX="185.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="229.5078125">
+            <font>
+                <Font size="14.0" />
+            </font></Text>
+        <Button id="confirmButton" layoutX="379.0" layoutY="344.0" mnemonicParsing="false" onAction="#handleConfirmation" prefHeight="26.0" prefWidth="96.0" text="Confirm">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Button>
+        <Button id="cancelButton" fx:id="cancelButton" layoutX="90.0" layoutY="344.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="26.0" prefWidth="92.0" text="Back">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Button>
+        <TableView id="tableView" fx:id="table" layoutX="36.0" layoutY="68.0" onMouseClicked="#clickOnTableRow" prefHeight="175.0" prefWidth="396.0" />
+        <Label contentDisplay="CENTER" layoutX="36.0" layoutY="299.0" prefHeight="26.0" prefWidth="152.0" text="Total price">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Label>
+        <TextField id="searchByCityField" fx:id="searchByCity" alignment="CENTER" layoutX="445.0" layoutY="108.0" prefHeight="25.0" prefWidth="122.0" promptText="Search by City" />
+        <Button id="searchButton" layoutX="445.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="37.0" prefWidth="122.0" text="Search">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button id="refreshTableButton" layoutX="445.0" layoutY="225.0" mnemonicParsing="false" onAction="#handleRefresh" prefHeight="37.0" prefWidth="122.0" text="Refresh Table">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+    </children>
+</Pane>

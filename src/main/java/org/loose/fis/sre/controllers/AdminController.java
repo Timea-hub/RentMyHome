@@ -20,7 +20,7 @@ public class AdminController {
     @FXML
     private Button logoutAdminButton;
 
-    public void handleAddDestination() throws IOException {
+    public void handleAddRent() throws IOException {
         Stage primary = new Stage();
         Stage stage = (Stage) addRentButton.getScene().getWindow();
         stage.close();
