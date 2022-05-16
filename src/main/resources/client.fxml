@@ -11,7 +11,7 @@
                 <Font size="20.0" />
             </font>
         </Label>
-        <Button fx:id="chDestButton" id="chooseDestinationButton" layoutX="221.0" layoutY="161.0" mnemonicParsing="false" onAction="#handleChooseDestination" prefHeight="39.0" prefWidth="160.0" text="Choose a Destination">
+        <Button fx:id="chDestButton" id="chooseRentButton" layoutX="221.0" layoutY="161.0" mnemonicParsing="false" onAction="#handleChooseRent" prefHeight="39.0" prefWidth="160.0" text="Choose desired rent!">
             <font>
                 <Font size="13.0" />
             </font>

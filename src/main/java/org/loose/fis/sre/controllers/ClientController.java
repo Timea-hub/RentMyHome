@@ -19,7 +19,7 @@ public class ClientController {
 
 
 
-    public void handleChooseDestination() throws IOException {
+    public void handleChooseRent() throws IOException {
         Stage primary = new Stage();
         Stage stage = (Stage) chDestButton.getScene().getWindow();
         stage.close();

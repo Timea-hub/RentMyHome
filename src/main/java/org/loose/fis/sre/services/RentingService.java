@@ -16,20 +16,18 @@ package org.loose.fis.sre.services;
 public class RentingService {
 
     private static ObjectRepository<Renting> rentingRepository;
-    private static Nitrite database;
+    private static Nitrite database = Nitrite.builder()
+            .filePath(getPathToFile("renting.db").toFile())
+            .openOrCreate("test", "test");
 
     public static void initDatabase() {
-
-        database = Nitrite.builder()
-                .filePath(getPathToFile("renting.db").toFile())
-                .openOrCreate("test", "test");
 
         rentingRepository = database.getRepository(Renting.class);
     }
 
-    public static void addDestination(String city, String apartament, String cleaningService, double price) throws RentIncompleteException {
-        if ((city.equals("")) || (apartament.equals("")) || (cleaningService.equals(""))) throw new RentIncompleteException();
-        rentingRepository.insert(new Renting(city, apartament, cleaningService, price));
+    public static void addRent(String city, String rent, int capacity, String cleaningService, double cleaningServicePrice, double price) throws RentIncompleteException {
+        if ((city.equals("")) || (rent.equals("")) || (cleaningService.equals(""))) throw new RentIncompleteException();
+        rentingRepository.insert(new Renting(city, rent, capacity, cleaningService, cleaningServicePrice, price));
     }
 
     public static List<Renting> getAllUsers() {
@@ -45,7 +43,7 @@ public class RentingService {
     }
 
     public static void removeRent(Renting renting) {
-        rentingRepository.remove(eq("Available house",renting.getRoom()));
+        rentingRepository.remove(eq("Available places: ",renting.getRent()));
     }
 
 
