@@ -23,7 +23,7 @@ public class ClientController {
         Stage primary = new Stage();
         Stage stage = (Stage) chDestButton.getScene().getWindow();
         stage.close();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("chooseDestination.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("chooseRent.fxml"));
         Scene nextScene = new Scene(root, 600, 400);
         primary.setScene(nextScene);
         primary.show();
