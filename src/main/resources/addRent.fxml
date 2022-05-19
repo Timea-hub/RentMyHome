@@ -57,7 +57,7 @@
             <Font size="17.0" />
          </font>
       </Label>
-        <Text id="addDestinationMessage" fx:id="addMessage" layoutX="176.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="134.13671875">
+        <Text id="addRentMessage" fx:id="addMessage" layoutX="176.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="134.13671875">
             <font>
                 <Font size="14.0" />
             </font>
