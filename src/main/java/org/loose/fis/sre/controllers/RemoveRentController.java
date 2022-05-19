@@ -24,8 +24,10 @@ public class RemoveRentController {
     private Button backButton;
 
     public TableColumn<Renting, String> city;
-    public TableColumn<Renting, String> room;
-    public TableColumn<Renting, String> typeOfTransport;
+    public TableColumn<Renting, String> rent;
+    public TableColumn<Renting, Integer> capacity;
+    public TableColumn<Renting, String> cleaningService;
+    public TableColumn<Renting, Double> cleaningServicePrice;
     public TableColumn<Renting, Double> pricePerson;
 
     private void initTableColumns(TableView<Renting> tableview)
@@ -34,19 +36,23 @@ public class RemoveRentController {
         city.setMinWidth(100);
         city.setCellValueFactory(new PropertyValueFactory<>("city"));
 
-        room = new TableColumn<>("Available house");
-        room.setMinWidth(100);
-        room.setCellValueFactory(new PropertyValueFactory<>("Available house"));
+        rent = new TableColumn<>("Available house");
+        rent.setMinWidth(100);
+        rent.setCellValueFactory(new PropertyValueFactory<>("rent"));
 
-        typeOfTransport = new TableColumn<>("Cleaning service");
-        typeOfTransport.setMinWidth(100);
-        typeOfTransport.setCellValueFactory(new PropertyValueFactory<>("leaning service"));
+        capacity = new TableColumn<>("Capacity");
+        capacity.setMinWidth(100);
+        capacity.setCellValueFactory(new PropertyValueFactory<>("capacity"));
+
+        cleaningService = new TableColumn<>("Cleaning service");
+        cleaningService.setMinWidth(100);
+        cleaningService.setCellValueFactory(new PropertyValueFactory<>("cleaningService"));
 
         pricePerson = new TableColumn<>("Price per Person");
         pricePerson.setMinWidth(100);
         pricePerson.setCellValueFactory(new PropertyValueFactory<>("pricePerson"));
 
-        table.getColumns().addAll(city,room,typeOfTransport,pricePerson);
+        table.getColumns().addAll(city,rent,capacity,cleaningService,cleaningServicePrice,pricePerson);
     }
 
     public void handleRefresh()

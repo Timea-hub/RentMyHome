@@ -18,31 +18,32 @@ import java.io.IOException;
 public class AddRentController {
 
     @FXML
-    private ChoiceBox cleaningService;
-
-    @FXML
     private Button saveButton;
 
     @FXML
     private Button cancelButton;
 
     @FXML
-    private TextField cityField;
+    private TextField city;
 
     @FXML
-    private TextField rentField;
+    private TextField rent;
 
     @FXML
     private TextField capacity;
 
     @FXML
-    private TextField priceField;
+    private ChoiceBox cleaningService;
+
+    @FXML
+    private TextField cleaningServicePrice;
+
+    @FXML
+    private TextField price;
 
     @FXML
     private Text addMessage;
 
-    public AddRentController() {
-    }
 
     @FXML
     public void initialize() {
@@ -52,9 +53,17 @@ public class AddRentController {
 
     public void handleSave() throws Exception {
         try {
-            String pr = priceField.getText();
+            String pr = price.getText();
             String cap = capacity.getText();
+            String cs = cleaningServicePrice.getText();
+
             if (!pr.matches("[0-9]+"))
+            {
+                addMessage.setText(("The price is invalid!"));
+                return;
+            }
+
+            if (!cs.matches("[0-9]+"))
             {
                 addMessage.setText(("The price is invalid!"));
                 return;
@@ -65,7 +74,7 @@ public class AddRentController {
                 addMessage.setText(("The capacity is invalid!"));
                 return;
             }
-            RentingService.addRent(cityField.getText(), rentField.getText(),(Integer.parseInt(capacity.getText())), (String) cleaningService.getValue(), (Double.parseDouble(priceField.getText())), (Double.parseDouble(priceField.getText())) );
+            RentingService.addRent(city.getText(), rent.getText(), (Integer.parseInt(capacity.getText())), (String) cleaningService.getValue(), (Double.parseDouble(cleaningServicePrice.getText())), (Double.parseDouble(price.getText())) );
             addMessage.setText("Rent added successfully!");
         } catch(RentIncompleteException e) {
             addMessage.setText(e.getMessage());
@@ -83,4 +92,9 @@ public class AddRentController {
         stage.close();
     }
 
+    public static void main(String[] args) {
+
+    }
+
 }
+

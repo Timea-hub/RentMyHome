@@ -9,15 +9,15 @@ public class Renting {
     private int capacity;
     private String cleaningService;
     private double cleaningServicePrice;
-    private double pricePerson;
+    private double price;
 
-    public Renting(String city, String rent, int capacity, String cleaningService, double cleaningServicePrice, double pricePerson) {
+    public Renting(String city, String rent, int capacity, String cleaningService, double cleaningServicePrice, double price) {
         this.city = city;
         this.rent = rent;
         this.capacity = capacity;
         this.cleaningService = cleaningService;
         this.cleaningServicePrice = cleaningServicePrice;
-        this.pricePerson = pricePerson;
+        this.price = price;
     }
 
     public Renting(){
@@ -63,11 +63,11 @@ public class Renting {
         this.cleaningServicePrice = cleaningServicePrice;
     }
 
-    public double getPricePerson() {
-        return pricePerson;
+    public double getPrice() {
+        return price;
     }
 
-    public void setPricePerson(double pricePerson) {
-        this.pricePerson = pricePerson;
+    public void setPrice(double price) {
+        this.price = price;
     }
 }
