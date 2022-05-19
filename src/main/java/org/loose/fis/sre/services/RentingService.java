@@ -21,13 +21,17 @@ public class RentingService {
             .openOrCreate("test", "test");
 
     public static void initDatabase() {
+        database = Nitrite.builder()
+                .filePath(getPathToFile("rent.db").toFile())
+                .openOrCreate("test", "test");
 
         rentingRepository = database.getRepository(Renting.class);
     }
 
     public static void addRent(String city, String rent, int capacity, String cleaningService, double cleaningServicePrice, double price) throws RentIncompleteException {
         if ((city.equals("")) || (rent.equals("")) || (cleaningService.equals(""))) throw new RentIncompleteException();
-        rentingRepository.insert(new Renting(city, rent, capacity, cleaningService, cleaningServicePrice, price));
+        Renting r=new Renting(city, rent, capacity, cleaningService, cleaningServicePrice, price);
+        rentingRepository.insert(r);
     }
 
     public static List<Renting> getAllUsers() {
