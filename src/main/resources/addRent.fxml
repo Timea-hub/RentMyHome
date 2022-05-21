@@ -35,15 +35,15 @@
                 <Font size="17.0" />
             </font>
         </Label>
-        <TextField id="cityField" fx:id="cityField" layoutX="237.0" layoutY="90.0" />
-        <TextField id="rentField" fx:id="rentField" layoutX="237.0" layoutY="127.0" />
-        <TextField id="priceField" fx:id="priceField" layoutX="237.0" layoutY="284.0" prefHeight="25.0" prefWidth="72.0" />
+        <TextField id="city" fx:id="city" layoutX="237.0" layoutY="90.0" />
+        <TextField id="rent" fx:id="rent" layoutX="237.0" layoutY="127.0" />
+        <TextField id="price" fx:id="price" layoutX="237.0" layoutY="284.0" prefHeight="25.0" prefWidth="72.0" />
         <Button id="cancelButton" fx:id="cancelButton" layoutX="42.0" layoutY="338.0" mnemonicParsing="false" onAction="#handleCancelButton" prefHeight="35.0" prefWidth="85.0" text="Cancel" textAlignment="CENTER">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-        <Text id="addRentMessage" fx:id="addMessage" layoutX="237.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price per service:" wrappingWidth="134.13671875">
+        <Text layoutX="237.0" layoutY="184.0" strokeWidth="0.0" text="Price per service:">
             <font>
                 <Font size="14.0" />
             </font>
@@ -57,6 +57,11 @@
             <Font size="17.0" />
          </font>
       </Label>
+        <Text id="addRentMessage" fx:id="addMessage" layoutX="176.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="134.13671875">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
 
         
 

@@ -29,8 +29,10 @@ public class ChooseRentController {
 
     public TableColumn<Renting, String> city;
     public TableColumn<Renting, String> rent;
+    public TableColumn<Renting, Integer> capacity;
     public TableColumn<Renting, String> cleaningService;
-    public TableColumn<Renting, Double> pricePerson;
+    public TableColumn<Renting, Double> cleaningServicePrice;
+    public TableColumn<Renting, Double> price;
 
     private void initTableColumns(TableView<Renting> tableview)
     {
@@ -42,15 +44,23 @@ public class ChooseRentController {
         rent.setMinWidth(100);
         rent.setCellValueFactory(new PropertyValueFactory<>("rent"));
 
+        capacity = new TableColumn<>("Capacity");
+        capacity.setMinWidth(100);
+        capacity.setCellValueFactory(new PropertyValueFactory<>("capacity"));
+
         cleaningService = new TableColumn<>("Cleaning service");
         cleaningService.setMinWidth(100);
         cleaningService.setCellValueFactory(new PropertyValueFactory<>("cleaningService"));
 
-        pricePerson = new TableColumn<>("Price per Person");
-        pricePerson.setMinWidth(100);
-        pricePerson.setCellValueFactory(new PropertyValueFactory<>("pricePerson"));
+        cleaningServicePrice = new TableColumn<>("Cleaning service");
+        cleaningServicePrice.setMinWidth(100);
+        cleaningServicePrice.setCellValueFactory(new PropertyValueFactory<>("cleaningServicePrice"));
 
-        table.getColumns().addAll(city,rent,cleaningService,pricePerson);
+        price = new TableColumn<>("Price per Person");
+        price.setMinWidth(100);
+        price.setCellValueFactory(new PropertyValueFactory<>("pricePerson"));
+
+        table.getColumns().addAll(city,rent,capacity,cleaningService,cleaningServicePrice,price);
     }
 
     public void handleCancel() throws IOException {
@@ -84,7 +94,7 @@ public class ChooseRentController {
         table.setItems(data);
     }
 
-    double price;
+    double totalPrice;
     public void clickOnTableRow()
     {
         Renting renting = table.getSelectionModel().getSelectedItem();
@@ -93,8 +103,8 @@ public class ChooseRentController {
             totalPriceText.setText("Please choose number of nights");
             return;
         }
-        price = Double.parseDouble(noOfNights.getText()) * renting.getPricePerson();
-        totalPriceText.setText(Double.toString(price));
+        totalPrice = Double.parseDouble(noOfNights.getText()) * renting.getPrice() + renting.getCleaningServicePrice();
+        totalPriceText.setText(Double.toString(totalPrice));
     }
 
     public void handleCalculate()
@@ -109,7 +119,7 @@ public class ChooseRentController {
         Alert confirm = new Alert(Alert.AlertType.INFORMATION);
         confirm.setTitle("Confirmation");
         confirm.setHeaderText("Yor booking was made!");
-        confirm.setContentText("Total price is " + price);
+        confirm.setContentText("Total price is " + totalPrice);
         confirm.show();
     }
 }
