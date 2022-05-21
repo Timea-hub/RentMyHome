@@ -47,6 +47,15 @@ public class RentingService {
         return list;
     }
 
+    public static ArrayList<Renting> getMyRents() {
+        ArrayList<Renting> list = new ArrayList<>();
+        
+        for(Renting rent : rentingRepository.find()) {
+            list.add(rent);
+        }
+        return list;
+    }
+
     public static void removeRent(Renting rent) {
         rentingRepository.remove(eq("Available places: ",rent.getRent()));
     }
