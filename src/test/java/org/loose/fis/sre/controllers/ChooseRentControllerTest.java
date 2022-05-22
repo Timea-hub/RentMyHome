@@ -68,7 +68,7 @@ class ChooseRentControllerTest {
 
         robot.clickOn("#refreshTableButton");
         robot.clickOn("#tableView");
-        robot.clickOn("city");
+        robot.clickOn("#city");
         robot.clickOn("#noOfNightsTextField");
         robot.write("3");
 
