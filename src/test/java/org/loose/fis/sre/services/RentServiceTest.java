@@ -18,11 +18,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RentServiceTest {
 
-    public static final String CITY = "city";
-    public static final String RENT = "rent";
-    public static final int CAPACITY = 100;
-    public static final String CLEANINGSERVICE = "cleaningService";
-    public static final double CLEANINGSERVICEPRICE = 100;
+    public static final String CITY = "Cluj";
+    public static final String RENT = "Casa - 3 camere";
+    public static final int CAPACITY = 6;
+    public static final String CLEANINGSERVICE = "Both";
+    public static final double CLEANINGSERVICEPRICE = 80;
     public static final double PRICE = 100;
 
     @BeforeEach

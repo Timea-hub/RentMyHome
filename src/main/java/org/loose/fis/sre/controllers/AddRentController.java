@@ -92,9 +92,7 @@ public class AddRentController {
         stage.close();
     }
 
-    public static void main(String[] args) {
 
-    }
 
 }
 
