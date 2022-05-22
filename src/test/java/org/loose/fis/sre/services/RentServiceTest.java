@@ -20,9 +20,9 @@ class RentServiceTest {
 
     public static final String CITY = "city";
     public static final String RENT = "rent";
-    public static final int CAPACITY = Integer.parseInt("capacity");
+    public static final int CAPACITY = 100;
     public static final String CLEANINGSERVICE = "cleaningService";
-    public static final double CLEANINGSERVICEPRICE = Double.parseDouble("cleaningServicePrice");
+    public static final double CLEANINGSERVICEPRICE = 100;
     public static final double PRICE = 100;
 
     @BeforeEach
