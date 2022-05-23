@@ -58,7 +58,7 @@ public class ChooseRentController {
 
         price = new TableColumn<>("Price per Person");
         price.setMinWidth(100);
-        price.setCellValueFactory(new PropertyValueFactory<>("pricePerson"));
+        price.setCellValueFactory(new PropertyValueFactory<>("price"));
 
         table.getColumns().addAll(city,rent,capacity,cleaningService,cleaningServicePrice,price);
     }
@@ -103,7 +103,7 @@ public class ChooseRentController {
             totalPriceText.setText("Please choose number of nights");
             return;
         }
-        totalPrice = Double.parseDouble(noOfNights.getText()) * renting.getPrice() + renting.getCleaningServicePrice();
+        totalPrice = Double.parseDouble(noOfNights.getText()) * (renting.getPrice() + renting.getCleaningServicePrice());
         totalPriceText.setText(Double.toString(totalPrice));
     }
 

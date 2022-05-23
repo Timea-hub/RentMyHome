@@ -28,7 +28,7 @@ public class RemoveRentController {
     public TableColumn<Renting, Integer> capacity;
     public TableColumn<Renting, String> cleaningService;
     public TableColumn<Renting, Double> cleaningServicePrice;
-    public TableColumn<Renting, Double> pricePerson;
+    public TableColumn<Renting, Double> price;
 
     private void initTableColumns(TableView<Renting> tableview)
     {
@@ -36,7 +36,7 @@ public class RemoveRentController {
         city.setMinWidth(100);
         city.setCellValueFactory(new PropertyValueFactory<>("city"));
 
-        rent = new TableColumn<>("Available house");
+        rent = new TableColumn<>("Rent");
         rent.setMinWidth(100);
         rent.setCellValueFactory(new PropertyValueFactory<>("rent"));
 
@@ -48,11 +48,15 @@ public class RemoveRentController {
         cleaningService.setMinWidth(100);
         cleaningService.setCellValueFactory(new PropertyValueFactory<>("cleaningService"));
 
-        pricePerson = new TableColumn<>("Price per Person");
-        pricePerson.setMinWidth(100);
-        pricePerson.setCellValueFactory(new PropertyValueFactory<>("pricePerson"));
+        cleaningServicePrice = new TableColumn<>("Cleaning service");
+        cleaningServicePrice.setMinWidth(100);
+        cleaningServicePrice.setCellValueFactory(new PropertyValueFactory<>("cleaningServicePrice"));
 
-        table.getColumns().addAll(city,rent,capacity,cleaningService,cleaningServicePrice,pricePerson);
+        price = new TableColumn<>("Price per Person");
+        price.setMinWidth(100);
+        price.setCellValueFactory(new PropertyValueFactory<>("price"));
+
+        table.getColumns().addAll(city,rent,capacity,cleaningService,cleaningServicePrice,price);
     }
 
     public void handleRefresh()

@@ -52,7 +52,7 @@ public class RentingService {
     }
 
     public static void removeRent(Renting rent) {
-        rentingRepository.remove(eq("Available places: ",rent.getRent()));
+        rentingRepository.remove(eq("rent",rent.getRent()));
     }
 
 
