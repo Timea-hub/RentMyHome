@@ -10,6 +10,7 @@ package org.loose.fis.sre.controllers;
         import javafx.scene.control.TableColumn;
         import javafx.scene.control.TableView;
         import javafx.scene.control.cell.PropertyValueFactory;
+        import javafx.scene.text.Text;
         import javafx.stage.Stage;
         import org.loose.fis.sre.model.Renting;
         import org.loose.fis.sre.services.RentingService;
@@ -22,6 +23,8 @@ public class RemoveRentController {
     public TableView<Renting> table;
     @FXML
     private Button backButton;
+    @FXML
+    private Text removeRentMessage;
 
     public TableColumn<Renting, String> city;
     public TableColumn<Renting, String> rent;
@@ -86,6 +89,7 @@ public class RemoveRentController {
         Renting renting = table.getSelectionModel().getSelectedItem();
         RentingService.removeRent(renting);
         handleRefresh();
+        removeRentMessage.setText("Rent removed successfully!");
     }
 
 }

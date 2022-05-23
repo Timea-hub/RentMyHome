@@ -54,9 +54,9 @@ class ClientControllerTest {
     }
 
     @Test
-    @DisplayName("Verify Choose Destination button is working properly")
+    @DisplayName("Verify Choose Rent button is working properly")
     void testChooseDestinationButton(FxRobot robot) {
-        robot.clickOn("#chooseDestinationButton");
-        robot.clickOn("#chooseDestinationWindow");
+        robot.clickOn("#chooseRentButton");
+        robot.clickOn("#chooseRentWindow");
     }
 }

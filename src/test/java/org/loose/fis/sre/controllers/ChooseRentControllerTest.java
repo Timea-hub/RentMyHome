@@ -64,11 +64,10 @@ class ChooseRentControllerTest {
     @DisplayName("Test - booking is working properly")
     void testBookingWorksProperly(FxRobot robot) throws Exception {
 
-        RentingService.addRent(CITY,RENT,CAPACITY,CLEANINGSERVICE,CLEANINGSERVICEPRICE,PRICE);
+        //RentingService.addRent(CITY,RENT,CAPACITY,CLEANINGSERVICE,CLEANINGSERVICEPRICE,PRICE);
 
         robot.clickOn("#refreshTableButton");
         robot.clickOn("#tableView");
-        robot.clickOn("#city");
         robot.clickOn("Sibiu");
         robot.clickOn("#noOfNightsTextField");
         robot.write("3");
@@ -80,8 +79,8 @@ class ChooseRentControllerTest {
     @DisplayName("Test - search field is working properly")
     void testSearchFieldIsWorkingProperly(FxRobot robot) throws Exception {
 
-        RentingService.addRent(CITY,RENT,CAPACITY,CLEANINGSERVICE,CLEANINGSERVICEPRICE,PRICE);
-        RentingService.addRent(ANOTHER_CITY,RENT,CAPACITY,CLEANINGSERVICE,CLEANINGSERVICEPRICE,PRICE);
+        //RentingService.addRent(CITY,RENT,CAPACITY,CLEANINGSERVICE,CLEANINGSERVICEPRICE,PRICE);
+        //RentingService.addRent(ANOTHER_CITY,RENT,CAPACITY,CLEANINGSERVICE,CLEANINGSERVICEPRICE,PRICE);
 
         robot.clickOn("#refreshTableButton");
         robot.clickOn("#searchByCityField");
@@ -92,7 +91,7 @@ class ChooseRentControllerTest {
         robot.clickOn("#noOfNightsTextField");
         robot.write("3");
 
-        Assertions.assertThat(robot.lookup("#totalPriceText").queryText()).hasText(String.format("300.0"));
+        Assertions.assertThat(robot.lookup("#totalPriceText").queryText()).hasText(String.format("450.0"));
     }
 
 }

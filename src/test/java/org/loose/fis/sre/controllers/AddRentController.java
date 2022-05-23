@@ -26,8 +26,8 @@ import static org.testfx.assertions.api.Assertions.assertThat;
 @ExtendWith(ApplicationExtension.class)
 class AddRentControllerTest {
 
-    public static final String CITY = "Constanta";
-    public static final String RENT = "Apartament - 3 camere";
+    public static final String CITY = "Bucuresti";
+    public static final String RENT = "Garsoniera";
     public static final String CAPACITY = "6";
     public static final String CLEANING_SERVICE = "Both";
     public static final String CLEANING_SERVICE_PRICE = "80";

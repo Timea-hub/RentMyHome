@@ -64,13 +64,14 @@ class RemoveRentControllerTest {
     @DisplayName("Verify that remove destination controller is working properly")
     void testRemoveDestination(FxRobot robot) throws Exception{
 
-        RentingService.addRent(CITY, RENT, CAPACITY,CLEANINGSERVICE,CLEANINGSERVICEPRICE, PRICE);
+        //RentingService.addRent(CITY, RENT, CAPACITY,CLEANINGSERVICE,CLEANINGSERVICEPRICE, PRICE);
 
         robot.clickOn("#refreshTableButton");
         robot.clickOn("#tableView");
         robot.clickOn("Garsoniera");
+        robot.clickOn("#removeSelectedButton");
 
-
-        assertThat(UserService.getAllUsers()).size().isEqualTo(0);
+        Assertions.assertThat(robot.lookup("#removeRentMessage").queryText()).hasText(String.format("Rent removed successfully!"));
+        //assertThat(UserService.getAllUsers()).size().isEqualTo(0);
     }
 }
