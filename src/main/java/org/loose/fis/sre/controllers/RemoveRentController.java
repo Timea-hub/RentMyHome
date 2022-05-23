@@ -10,6 +10,7 @@ package org.loose.fis.sre.controllers;
         import javafx.scene.control.TableColumn;
         import javafx.scene.control.TableView;
         import javafx.scene.control.cell.PropertyValueFactory;
+        import javafx.scene.text.Text;
         import javafx.stage.Stage;
         import org.loose.fis.sre.model.Renting;
         import org.loose.fis.sre.services.RentingService;
@@ -22,13 +23,15 @@ public class RemoveRentController {
     public TableView<Renting> table;
     @FXML
     private Button backButton;
+    @FXML
+    private Text removeRentMessage;
 
     public TableColumn<Renting, String> city;
     public TableColumn<Renting, String> rent;
     public TableColumn<Renting, Integer> capacity;
     public TableColumn<Renting, String> cleaningService;
     public TableColumn<Renting, Double> cleaningServicePrice;
-    public TableColumn<Renting, Double> pricePerson;
+    public TableColumn<Renting, Double> price;
 
     private void initTableColumns(TableView<Renting> tableview)
     {
@@ -36,7 +39,7 @@ public class RemoveRentController {
         city.setMinWidth(100);
         city.setCellValueFactory(new PropertyValueFactory<>("city"));
 
-        rent = new TableColumn<>("Available house");
+        rent = new TableColumn<>("Rent");
         rent.setMinWidth(100);
         rent.setCellValueFactory(new PropertyValueFactory<>("rent"));
 
@@ -48,11 +51,15 @@ public class RemoveRentController {
         cleaningService.setMinWidth(100);
         cleaningService.setCellValueFactory(new PropertyValueFactory<>("cleaningService"));
 
-        pricePerson = new TableColumn<>("Price per Person");
-        pricePerson.setMinWidth(100);
-        pricePerson.setCellValueFactory(new PropertyValueFactory<>("pricePerson"));
+        cleaningServicePrice = new TableColumn<>("Cleaning service");
+        cleaningServicePrice.setMinWidth(100);
+        cleaningServicePrice.setCellValueFactory(new PropertyValueFactory<>("cleaningServicePrice"));
 
-        table.getColumns().addAll(city,rent,capacity,cleaningService,cleaningServicePrice,pricePerson);
+        price = new TableColumn<>("Price per Person");
+        price.setMinWidth(100);
+        price.setCellValueFactory(new PropertyValueFactory<>("price"));
+
+        table.getColumns().addAll(city,rent,capacity,cleaningService,cleaningServicePrice,price);
     }
 
     public void handleRefresh()
@@ -82,6 +89,7 @@ public class RemoveRentController {
         Renting renting = table.getSelectionModel().getSelectedItem();
         RentingService.removeRent(renting);
         handleRefresh();
+        removeRentMessage.setText("Rent removed successfully!");
     }
 
 }

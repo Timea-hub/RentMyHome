@@ -47,7 +47,7 @@ class RemoveRentControllerTest {
 
     @Start
     void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("removeDestination.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("removeRent.fxml"));
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.setTitle("Admin Test");
         primaryStage.show();
@@ -64,13 +64,14 @@ class RemoveRentControllerTest {
     @DisplayName("Verify that remove destination controller is working properly")
     void testRemoveDestination(FxRobot robot) throws Exception{
 
-        RentingService.addRent(CITY, RENT, CAPACITY,CLEANINGSERVICE,CLEANINGSERVICEPRICE, PRICE);
+        //RentingService.addRent(CITY, RENT, CAPACITY,CLEANINGSERVICE,CLEANINGSERVICEPRICE, PRICE);
 
         robot.clickOn("#refreshTableButton");
         robot.clickOn("#tableView");
-        robot.clickOn("garsoniera");
+        robot.clickOn("Garsoniera");
+        robot.clickOn("#removeSelectedButton");
 
-
-        assertThat(UserService.getAllUsers()).size().isEqualTo(0);
+        Assertions.assertThat(robot.lookup("#removeRentMessage").queryText()).hasText(String.format("Rent removed successfully!"));
+        //assertThat(UserService.getAllUsers()).size().isEqualTo(0);
     }
 }

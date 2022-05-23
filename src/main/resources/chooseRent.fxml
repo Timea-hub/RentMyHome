@@ -42,7 +42,7 @@
                 <Font size="16.0" />
             </font>
         </Button>
-        <Button id="refreshTableButton" layoutX="445.0" layoutY="225.0" mnemonicParsing="false" onAction="#handleRefresh" prefHeight="37.0" prefWidth="122.0" text="Refresh Table">
+        <Button id="refreshTableButton" layoutX="445.0" layoutY="225.0" mnemonicParsing="false" onAction="#handleRefresh" prefHeight="37.0" prefWidth="122.0" text="See all">
             <font>
                 <Font size="16.0" />
             </font>

@@ -23,7 +23,7 @@ import org.testfx.framework.junit5.Start;
 @ExtendWith(ApplicationExtension.class)
 class ChooseRentControllerTest {
 
-    public static final String CITY = "city";
+    public static final String CITY = "Sibiu";
     public static final String ANOTHER_CITY = "another city";
     public static final String RENT = "rent";
     public static final int CAPACITY = 100;
@@ -47,7 +47,7 @@ class ChooseRentControllerTest {
 
     @Start
     void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("chooseDestination.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("chooseRent.fxml"));
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.setTitle("Client Test");
         primaryStage.show();
@@ -64,34 +64,34 @@ class ChooseRentControllerTest {
     @DisplayName("Test - booking is working properly")
     void testBookingWorksProperly(FxRobot robot) throws Exception {
 
-        RentingService.addRent(CITY,RENT,CAPACITY,CLEANINGSERVICE,CLEANINGSERVICEPRICE,PRICE);
+        //RentingService.addRent(CITY,RENT,CAPACITY,CLEANINGSERVICE,CLEANINGSERVICEPRICE,PRICE);
 
         robot.clickOn("#refreshTableButton");
         robot.clickOn("#tableView");
-        robot.clickOn("#city");
+        robot.clickOn("Sibiu");
         robot.clickOn("#noOfNightsTextField");
         robot.write("3");
 
-        Assertions.assertThat(robot.lookup("#totalPriceText").queryText()).hasText(String.format("300.0"));
+        Assertions.assertThat(robot.lookup("#totalPriceText").queryText()).hasText(String.format("450.0"));
     }
 
     @Test
     @DisplayName("Test - search field is working properly")
     void testSearchFieldIsWorkingProperly(FxRobot robot) throws Exception {
 
-        RentingService.addRent(CITY,RENT,CAPACITY,CLEANINGSERVICE,CLEANINGSERVICEPRICE,PRICE);
-        RentingService.addRent(ANOTHER_CITY,RENT,CAPACITY,CLEANINGSERVICE,CLEANINGSERVICEPRICE,PRICE);
+        //RentingService.addRent(CITY,RENT,CAPACITY,CLEANINGSERVICE,CLEANINGSERVICEPRICE,PRICE);
+        //RentingService.addRent(ANOTHER_CITY,RENT,CAPACITY,CLEANINGSERVICE,CLEANINGSERVICEPRICE,PRICE);
 
         robot.clickOn("#refreshTableButton");
         robot.clickOn("#searchByCityField");
-        robot.write("city");
+        robot.write("Sibiu");
         robot.clickOn("#searchButton");
         robot.clickOn("#tableView");
-        robot.clickOn("city");
+        robot.clickOn("Sibiu");
         robot.clickOn("#noOfNightsTextField");
         robot.write("3");
 
-        Assertions.assertThat(robot.lookup("#totalPriceText").queryText()).hasText(String.format("300.0"));
+        Assertions.assertThat(robot.lookup("#totalPriceText").queryText()).hasText(String.format("450.0"));
     }
 
 }

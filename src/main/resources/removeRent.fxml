@@ -17,6 +17,11 @@
             </font></Button>
         <TableView id="tableView" fx:id="table" layoutX="41.0" layoutY="79.0" prefHeight="195.0" prefWidth="522.0" />
         <Button id="removeSelectedButton" layoutX="241.0" layoutY="283.0" mnemonicParsing="false" onAction="#handleRemoveSelectedButton" prefHeight="43.0" prefWidth="118.0" text="Remove Selected" />
-        <Button id="refreshTableButton" layoutX="464.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleRefresh" prefHeight="43.0" prefWidth="99.0" text="Refresh Table" />
+        <Button id="refreshTableButton" layoutX="464.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleRefresh" prefHeight="43.0" prefWidth="99.0" text="See all" />
+        <Text id="removeRentMessage" fx:id="removeMessage" layoutX="176.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="134.13671875">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
     </children>
 </Pane>
