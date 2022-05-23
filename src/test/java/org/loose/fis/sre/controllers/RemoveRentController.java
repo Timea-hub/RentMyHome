@@ -47,7 +47,7 @@ class RemoveRentControllerTest {
 
     @Start
     void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("removeDestination.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("removeRent.fxml"));
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.setTitle("Admin Test");
         primaryStage.show();
@@ -68,7 +68,7 @@ class RemoveRentControllerTest {
 
         robot.clickOn("#refreshTableButton");
         robot.clickOn("#tableView");
-        robot.clickOn("garsoniera");
+        robot.clickOn("Garsoniera");
 
 
         assertThat(UserService.getAllUsers()).size().isEqualTo(0);
