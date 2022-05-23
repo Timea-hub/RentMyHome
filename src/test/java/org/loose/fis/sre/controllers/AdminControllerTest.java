@@ -53,15 +53,15 @@ class AdminControllerTest {
 
     @Test
     @DisplayName("Verify that remove destination button is working properly")
-    void testAdminRemoveDestinationButton(FxRobot robot) {
-        robot.clickOn("#removeDestinationButton");
-        robot.clickOn("#removeDestinationWindow");
+    void testAdminRemoveRentButton(FxRobot robot) {
+        robot.clickOn("#removeRentButton");
+        robot.clickOn("#removeRentWindow");
     }
 
     @Test
     @DisplayName("Verify that add destination button is working properly")
     void testAdminAddDestinationButton(FxRobot robot) {
-        robot.clickOn("#addDestinationButton");
-        robot.clickOn("#addDestinationWindow");
+        robot.clickOn("#addRentButton");
+        robot.clickOn("#addRentWindow");
     }
 }

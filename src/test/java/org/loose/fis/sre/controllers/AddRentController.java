@@ -26,8 +26,8 @@ import static org.testfx.assertions.api.Assertions.assertThat;
 @ExtendWith(ApplicationExtension.class)
 class AddRentControllerTest {
 
-    public static final String CITY = "Cluj";
-    public static final String RENT = "Casa - 3 camere";
+    public static final String CITY = "Constanta";
+    public static final String RENT = "Apartament - 3 camere";
     public static final String CAPACITY = "6";
     public static final String CLEANING_SERVICE = "Both";
     public static final String CLEANING_SERVICE_PRICE = "80";
@@ -116,8 +116,8 @@ class AddRentControllerTest {
         robot.clickOn("#capacity");
         robot.write(CAPACITY);
         robot.clickOn("#cleaningService");
-        robot.clickOn("Both");
-        robot.clickOn(CLEANING_SERVICE);
+        robot.clickOn("Laundry");
+        //robot.clickOn(CLEANING_SERVICE);
         robot.clickOn("#cleaningServicePrice");
         robot.write(CLEANING_SERVICE_PRICE);
         robot.clickOn("#price");
@@ -141,28 +141,28 @@ class AddRentControllerTest {
         robot.clickOn(CLEANING_SERVICE);
         robot.clickOn("#cleaningServicePrice");
         robot.write(CLEANING_SERVICE_PRICE);
-        robot.clickOn("#priceField");
+        robot.clickOn("#price");
         robot.write(INVALID_PRICE);
 
         robot.clickOn("#saveButton");
-        assertThat(robot.lookup("#addDestinationMessage").queryText()).hasText("The price is invalid!");
+        assertThat(robot.lookup("#addRentMessage").queryText()).hasText("The price is invalid!");
     }
 
     @Test
-    @DisplayName("Not enough data of the destination - city field empty")
+    @DisplayName("Not enough data of the destination - empty fields")
     void test(FxRobot robot) {
         robot.clickOn("#capacity");
         robot.write(CAPACITY);
         robot.clickOn("#cleaningService");
         robot.clickOn("Both");
-        robot.clickOn(CLEANING_SERVICE);
+        //robot.clickOn(CLEANING_SERVICE);
         robot.clickOn("#cleaningServicePrice");
         robot.write(CLEANING_SERVICE_PRICE);
-        robot.clickOn("#priceField");
+        robot.clickOn("#price");
         robot.write(PRICE);
 
         robot.clickOn("#saveButton");
-        assertThat(robot.lookup("#addDestinationMessage").queryText()).hasText("Not enough data of the destination!");
+        assertThat(robot.lookup("#addRentMessage").queryText()).hasText("Not enough data of the destination!");
     }
 
 }
